@@ -170,9 +170,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2.1274877
+  m_Height: 1.9719229
   m_Direction: 1
-  m_Center: {x: 0, y: 0.8999078, z: 0}
+  m_Center: {x: 0, y: 0.9776902, z: 0}
 --- !u!54 &127740397
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -202,6 +202,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: {fileID: 614428930}
+  clickCounter: 0
+  lastClick: 0
+  comboTimeDelay: 1
 --- !u!1001 &614428929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -526,6 +529,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.012
       objectReference: {fileID: 0}
+    - target: {fileID: -5975033157549033438, guid: a4a88c0619e4dae4b8c10e5ffabbaf00,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -5975033157549033438, guid: a4a88c0619e4dae4b8c10e5ffabbaf00,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -5975033157549033438, guid: a4a88c0619e4dae4b8c10e5ffabbaf00,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a4a88c0619e4dae4b8c10e5ffabbaf00,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -580,6 +598,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a4a88c0619e4dae4b8c10e5ffabbaf00,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a4a88c0619e4dae4b8c10e5ffabbaf00,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a4a88c0619e4dae4b8c10e5ffabbaf00,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: a4a88c0619e4dae4b8c10e5ffabbaf00,
         type: 3}
