@@ -6,8 +6,9 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] Animator attack;
     [SerializeField] int clickCounter = 0;
-    [SerializeField] float lastClick = 0;
-    [SerializeField] float comboTimeDelay = 0.5f;
+    //[SerializeField] float lastClick = 0;
+    //[SerializeField] float comboTimeDelay = 0.5f;
+    private bool canClick = true;
 
 
     // Start is called before the first frame update
@@ -19,51 +20,39 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.time - lastClick > comboTimeDelay)
+       if (Input.GetButtonDown("Attack"))
         {
-            clickCounter = 0;
-            AttackThree();
-        }
-
-        if (Input.GetButtonDown("Attack"))
-        {
-            lastClick = Time.time;
-            clickCounter++;
-            if (clickCounter == 1)
-            {
-                attack.SetBool("FirstAttack", true);
-            }
-            //Max number of click
-            clickCounter = Mathf.Clamp(clickCounter, 0, 3);
+            AttackCombo();
         }
     }
 
     void AttackCombo()
     {
-        if (Input.GetButtonDown("Attack"))
+        if (canClick)
         {
-            lastClick = Time.time;
             clickCounter++;
-            if(clickCounter == 1)
-            {
-                attack.SetBool("FirstAttack", true);
-            }
-            //Max number of click
-            clickCounter = Mathf.Clamp(clickCounter, 0, 3);
         }
+        if(clickCounter == 1)
+        {
+            attack.SetBool("FirstAttack", true);
+        }
+        //Max number of click
+        clickCounter = Mathf.Clamp(clickCounter, 0, 3);
     }
 
-    public void AttackOne()
+    public void ComboCheck()
     {
-        //If click 2+ go second, else reset.
+        canClick = false;
         if(clickCounter >= 2)
         {
             attack.SetBool("SecondAttack", true);
+            canClick = true;
         }
         else
         {
             attack.SetBool("FirstAttack", false);
             clickCounter = 0;
+            canClick = true;
         }
     }
 
@@ -78,14 +67,16 @@ public class PlayerController : MonoBehaviour
         {
             attack.SetBool("SecondAttack", false);
             clickCounter = 0;
+            canClick = true;
         }
     }
 
     public void AttackThree()
     {
-        attack.SetBool("FirstAttack", false);
-        attack.SetBool("SecondAttack", false);
+       // attack.SetBool("FirstAttack", false);
+        //attack.SetBool("SecondAttack", false);
         attack.SetBool("ThirdAttack", false);
         clickCounter = 0;
+        canClick = true;
     }
 }
