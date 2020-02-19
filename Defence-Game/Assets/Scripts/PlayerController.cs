@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         clickCounter = Mathf.Clamp(clickCounter, 0, 3);
     }
 
-    public void ComboCheck()
+    public void AttackOne()
     {
         canClick = false;
         if(clickCounter >= 2)
