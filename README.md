@@ -1,1 +1,2 @@
-# Unity-Info-Team
+# Unity Game
+Team : Rajha Nghm, Robert Tran
