@@ -1959,15 +1959,16 @@ GameObject:
   - component: {fileID: 3759350869990330764}
   - component: {fileID: 2295519410189438720}
   - component: {fileID: 2295519410189438721}
+  - component: {fileID: 1965337666433797195}
   - component: {fileID: 2295519410189438727}
   - component: {fileID: 2295519410189438726}
   - component: {fileID: 2295519410189438723}
   - component: {fileID: 1562367349757718293}
-  - component: {fileID: 8362591145117574903}
   - component: {fileID: 4239694028773005565}
+  - component: {fileID: 8940656292671856104}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1980,7 +1981,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7852799643687980773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1215181, y: -0.8, z: 0.7081541}
+  m_LocalPosition: {x: -1.1215181, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3626646817098970565}
@@ -2037,6 +2038,21 @@ CapsuleCollider:
   m_Height: 1.9719229
   m_Direction: 1
   m_Center: {x: 0, y: 0.9776902, z: 0}
+--- !u!114 &1965337666433797195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7852799643687980773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60554da7935cdc14b9f7d5f761db201f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToIgnore:
+  - {fileID: 2295519410189438727}
+  - {fileID: 2295519410189438723}
 --- !u!114 &2295519410189438727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2102,26 +2118,10 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 4239694028773005565}
+  - {fileID: 8940656292671856104}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &8362591145117574903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7852799643687980773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60554da7935cdc14b9f7d5f761db201f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptsToIgnore:
-  - {fileID: 2295519410189438726}
-  - {fileID: 2295519410189438727}
-  - {fileID: 2295519410189438723}
-  - {fileID: 8362591145117574903}
 --- !u!114 &4239694028773005565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2137,6 +2137,51 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
+--- !u!114 &8940656292671856104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7852799643687980773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 1
+    SynchronizeType: 1
+    Name: Forward
+  - Type: 1
+    SynchronizeType: 1
+    Name: Turn
+  - Type: 4
+    SynchronizeType: 1
+    Name: Crouch
+  - Type: 4
+    SynchronizeType: 0
+    Name: OnGround
+  - Type: 1
+    SynchronizeType: 1
+    Name: Jump
+  - Type: 1
+    SynchronizeType: 1
+    Name: JumpLeg
+  - Type: 4
+    SynchronizeType: 1
+    Name: FirstAttack
+  - Type: 4
+    SynchronizeType: 1
+    Name: SecondAttack
+  - Type: 4
+    SynchronizeType: 1
+    Name: ThirdAttack
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &7911233535959430076
 GameObject:
   m_ObjectHideFlags: 0
