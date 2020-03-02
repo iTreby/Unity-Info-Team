@@ -6,8 +6,9 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] Animator attack;
     [SerializeField] int clickCounter = 0;
-    //[SerializeField] float lastClick = 0;
-    //[SerializeField] float comboTimeDelay = 0.5f;
+    [SerializeField] float maxHealth = 100.0f;
+    [SerializeField] Health health;
+    private float currentHP;
     private bool canClick = true;
 
 
@@ -15,6 +16,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         attack.GetComponent<Animator>();
+        currentHP = maxHealth;
+        health.SetMaxHP(maxHealth);
     }
 
     // Update is called once per frame
@@ -24,6 +27,12 @@ public class PlayerController : MonoBehaviour
         {
             AttackCombo();
         }
+    }
+
+    void TakeDamage(float damage)
+    {
+        currentHP -= damage;
+        health.SetHealth(currentHP);
     }
 
     void AttackCombo()

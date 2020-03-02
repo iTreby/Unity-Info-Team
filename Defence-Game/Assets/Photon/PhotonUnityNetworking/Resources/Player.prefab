@@ -2099,6 +2099,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: {fileID: 3759350869990330764}
   clickCounter: 0
+  maxHealth: 100
+  health: {fileID: 0}
 --- !u!114 &1562367349757718293
 MonoBehaviour:
   m_ObjectHideFlags: 0
