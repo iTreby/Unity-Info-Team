@@ -215,6 +215,16 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 2128973563}
+    - target: {fileID: 3759350869990330764, guid: a9f4ada2f45bf35438e3ef23a353e81e,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 8580a9e492f2faf4d83b46886c06e3a2, type: 3}
+    - target: {fileID: 3759350869990330764, guid: a9f4ada2f45bf35438e3ef23a353e81e,
+        type: 3}
+      propertyPath: m_WarningMessage
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6530754318033812726, guid: a9f4ada2f45bf35438e3ef23a353e81e,
         type: 3}
       propertyPath: m_LocalPosition.x

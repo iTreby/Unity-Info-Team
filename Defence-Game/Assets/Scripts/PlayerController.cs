@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     {
         attack.GetComponent<Animator>();
         currentHP = maxHealth;
-        health.SetMaxHP(maxHealth);
+       // health.SetMaxHP(maxHealth);
     }
 
     // Update is called once per frame
