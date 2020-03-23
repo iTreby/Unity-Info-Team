@@ -25,7 +25,8 @@ public class NetworkController : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.Instantiate("Viking", new Vector3(Random.Range(-0.9f,-1f),transform.position.y,transform.position.z), Quaternion.identity);
+        //
+        PhotonNetwork.Instantiate("Viking", new Vector3(Random.Range(1f,1.5f),0.32f,Random.Range(35f,55f)), Quaternion.identity);
     }
 
     // Update is called once per frame
