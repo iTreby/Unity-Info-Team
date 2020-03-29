@@ -28,6 +28,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
+		bool isRolling = false;
 
 
 		void Start()
@@ -40,6 +41,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 			m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 			m_OrigGroundCheckDistance = m_GroundCheckDistance;
+		}
+
+		public void Rolling()
+		{
+			if (Input.GetButtonDown("Jump"))
+			{
+				m_Animator.SetBool("Roll", true);
+			}
+
 		}
 
 
@@ -59,14 +69,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			ApplyExtraTurnRotation();
 
 			// control and velocity handling is different when grounded and airborne:
-			if (m_IsGrounded)
-			{
-				HandleGroundedMovement(crouch, jump);
-			}
-			else
-			{
-				HandleAirborneMovement();
-			}
+			//if (m_IsGrounded)
+			//{
+			//	HandleGroundedMovement(crouch, jump);
+			//}
+			//else
+			//{
+			//	HandleAirborneMovement();
+			//}
 
 			ScaleCapsuleForCrouching(crouch);
 			PreventStandingInLowHeadroom();
@@ -120,12 +130,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// update the animator parameters
 			m_Animator.SetFloat("Forward", m_ForwardAmount, 0.1f, Time.deltaTime);
 			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
-			m_Animator.SetBool("Crouch", m_Crouching);
+			//m_Animator.SetBool("Crouch", m_Crouching);
 			m_Animator.SetBool("OnGround", m_IsGrounded);
-			if (!m_IsGrounded)
-			{
-				m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
-			}
+			//if (!m_IsGrounded)
+			//{
+			//	m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
+			//}
 
 			// calculate which leg is behind, so as to leave that leg trailing in the jump animation
 			// (This code is reliant on the specific run cycle offset in our animations,
@@ -163,18 +173,18 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 
-		void HandleGroundedMovement(bool crouch, bool jump)
-		{
-			// check whether conditions are right to allow a jump:
-			if (jump && !crouch && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
-			{
-				// jump!
-				m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
-				m_IsGrounded = false;
-				m_Animator.applyRootMotion = false;
-				m_GroundCheckDistance = 0.1f;
-			}
-		}
+		//void HandleGroundedMovement(bool crouch, bool jump)
+		//{
+		//	// check whether conditions are right to allow a jump:
+		//	if (jump && !crouch && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
+		//	{
+		//		// jump!
+		//		m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
+		//		m_IsGrounded = false;
+		//		m_Animator.applyRootMotion = false;
+		//		m_GroundCheckDistance = 0.1f;
+		//	}
+		//}
 
 		void ApplyExtraTurnRotation()
 		{

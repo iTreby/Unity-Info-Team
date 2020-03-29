@@ -27,7 +27,20 @@ public class PlayerController : MonoBehaviour
         {
             AttackCombo();
         }
+        Rolling();
     }
+
+    public void Rolling()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            attack.SetBool("Roll", true);
+        }
+        if (Input.GetButtonUp("Jump")){
+            attack.SetBool("Roll", false);
+        }
+    }
+
 
     void TakeDamage(float damage)
     {
@@ -82,8 +95,8 @@ public class PlayerController : MonoBehaviour
 
     public void AttackThree()
     {
-       // attack.SetBool("FirstAttack", false);
-        //attack.SetBool("SecondAttack", false);
+        attack.SetBool("FirstAttack", false);
+        attack.SetBool("SecondAttack", false);
         attack.SetBool("ThirdAttack", false);
         clickCounter = 0;
         canClick = true;
