@@ -191,7 +191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8261828458702789846
 Transform:
   m_ObjectHideFlags: 0
@@ -264,7 +264,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013298464292191421}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60554da7935cdc14b9f7d5f761db201f, type: 3}
   m_Name: 
@@ -1356,6 +1356,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &938105280
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4249483009592135892}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06934217, y: 0.9878023, z: 0.1839709}
+  m_Center: {x: -0.0000026855225, y: 0.7282445, z: -0.011834983}
 --- !u!1 &4324430202367968939
 GameObject:
   m_ObjectHideFlags: 0
@@ -2848,6 +2861,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Wep_Ornate_Sword_01
       objectReference: {fileID: 0}
+    - target: {fileID: 119060, guid: c17b117a7e676e148b2ee325c1e6041d, type: 3}
+      propertyPath: m_TagString
+      value: Sword
+      objectReference: {fileID: 0}
     - target: {fileID: 473066, guid: c17b117a7e676e148b2ee325c1e6041d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.4
@@ -2894,18 +2911,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 473066, guid: c17b117a7e676e148b2ee325c1e6041d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 75
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 473066, guid: c17b117a7e676e148b2ee325c1e6041d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 75
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 473066, guid: c17b117a7e676e148b2ee325c1e6041d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 75
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c17b117a7e676e148b2ee325c1e6041d, type: 3}
+--- !u!1 &4249483009592135892 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 119060, guid: c17b117a7e676e148b2ee325c1e6041d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4249483009592246720}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4249483009592063530 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 473066, guid: c17b117a7e676e148b2ee325c1e6041d,
