@@ -15,15 +15,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void Start()
         {
-            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-            foreach (GameObject player in players)
-            {
-                if (PhotonView.Get(player).IsMine)
-                {
-                    SetTarget(player.transform);
-                    break;
-                }
-            }
+            //GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            //foreach (GameObject player in players)
+            //{
+            //    if (PhotonView.Get(player).IsMine)
+            //    {
+            //        SetTarget(player.transform);
+            //        break;
+            //    }
+            //}
 
             // get the components on the object we need ( should not be null due to require component so no need to check )
             agent = GetComponentInChildren<UnityEngine.AI.NavMeshAgent>();

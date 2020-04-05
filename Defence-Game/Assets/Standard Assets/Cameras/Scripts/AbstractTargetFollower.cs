@@ -22,15 +22,15 @@ namespace UnityStandardAssets.Cameras
 
         protected virtual void Start()
         {
-            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-            foreach (GameObject player in players)
-            {
-                if (PhotonView.Get(player).IsMine)
-                {
-                    SetTarget(player.transform);
-                    break;
-                }
-            }
+            //GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            //foreach (GameObject player in players)
+            //{
+            //    if (PhotonView.Get(player).IsMine)
+            //    {
+            //        SetTarget(player.transform);
+            //        break;
+            //    }
+            //}
             // if auto targeting is used, find the object tagged "Player"
             // any class inheriting from this should call base.Start() to perform this action!
             if (m_AutoTargetPlayer)
