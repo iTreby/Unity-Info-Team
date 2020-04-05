@@ -10,7 +10,7 @@ public class SpawnAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Spawning", 5f, 10f);
+        InvokeRepeating("Spawning", 2.5f, 2.5f);
     }
 
     // Update is called once per frame
@@ -19,28 +19,9 @@ public class SpawnAI : MonoBehaviour
         
     }
 
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "Targer")
-        {
-            Destroy(this);
-        }
-    }
-
-
-
     public void Spawning()
     {
         Instantiate(Monster, new Vector3(2f,-4f,30),Portal.rotation);
     }
 
-    public IEnumerator Spawn()
-    {
-        while (true)
-        {
-            Instantiate(Monster, Portal);
-            yield return new WaitForSeconds(5f);
-        }
-    }
 }

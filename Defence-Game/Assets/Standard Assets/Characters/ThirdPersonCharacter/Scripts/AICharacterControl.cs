@@ -50,5 +50,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             this.target = target;
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.tag == "effect" || other.gameObject.tag == "Sword")
+            {
+                this.gameObject.SetActive(false);
+            }
+        }
+
+
     }
 }
