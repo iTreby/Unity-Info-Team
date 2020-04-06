@@ -6,9 +6,9 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] Animator attack;
     [SerializeField] int clickCounter = 0;
-    [SerializeField] float maxHealth = 100.0f;
-    [SerializeField] Health health;
-    private float currentHP;
+    //[SerializeField] float maxHealth = 100.0f;
+    //[SerializeField] Health health;
+    //private float currentHP;
     private bool canClick = true;
 
 
@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         attack.GetComponent<Animator>();
-        currentHP = maxHealth;
+        //currentHP = maxHealth;
        // health.SetMaxHP(maxHealth);
     }
 
@@ -27,26 +27,26 @@ public class PlayerController : MonoBehaviour
         {
             AttackCombo();
         }
-        Rolling();
+ 
     }
 
-    public void Rolling()
-    {
-        if (Input.GetButtonDown("Jump"))
-        {
-            attack.SetBool("Roll", true);
-        }
-        if (Input.GetButtonUp("Jump")){
-            attack.SetBool("Roll", false);
-        }
-    }
+    //public void Rolling()
+    //{
+    //    if (Input.GetButtonDown("Jump"))
+    //    {
+    //        attack.SetBool("Roll", true);
+    //    }
+    //    if (Input.GetButtonUp("Jump")){
+    //        attack.SetBool("Roll", false);
+    //    }
+    //}
 
 
-    void TakeDamage(float damage)
-    {
-        currentHP -= damage;
-        health.SetHealth(currentHP);
-    }
+    //void TakeDamage(float damage)
+    //{
+    //    currentHP -= damage;
+    //    health.SetHealth(currentHP);
+    //}
 
     void AttackCombo()
     {
