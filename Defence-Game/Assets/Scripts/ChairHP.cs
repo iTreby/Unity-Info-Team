@@ -29,7 +29,7 @@ public class ChairHP : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "soul")
+        if (other.gameObject.tag == "Soul")
         {
             TakeDamage(5);
         }
