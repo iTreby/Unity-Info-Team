@@ -9,6 +9,23 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject winningState;
     private float timeLeft = 120.0f;
 
+
+
+    private static GameManager _instance = null;
+
+    public static GameManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<GameManager>();
+            }
+            return _instance;
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {

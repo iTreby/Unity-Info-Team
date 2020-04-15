@@ -12,6 +12,7 @@ public class PlayerNetwork : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Find other player and disable the code to not input their control
         photonView = GetComponent<PhotonView>();
         if (!photonView.IsMine)
         {
@@ -22,9 +23,4 @@ public class PlayerNetwork : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
