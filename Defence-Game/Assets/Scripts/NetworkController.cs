@@ -22,32 +22,28 @@ public class NetworkController : MonoBehaviourPunCallbacks
     }
 
 
-    // Start is called before the first frame update
     void Start()
     {
+        //Connect to the server
         PhotonNetwork.ConnectUsingSettings();
     }
 
     public override void OnConnectedToMaster()
     {
+        //Once connected
         Debug.Log("connected" + PhotonNetwork.CloudRegion);
         PhotonNetwork.JoinLobby();
     }
 
     public override void OnJoinedLobby()
     {
-        PhotonNetwork.JoinOrCreateRoom("Roon", new RoomOptions { MaxPlayers = 2 }, TypedLobby.Default);
+        //Room of 2 players
+        PhotonNetwork.JoinOrCreateRoom("Room", new RoomOptions { MaxPlayers = 2 }, TypedLobby.Default);
     }
 
     public override void OnJoinedRoom()
     {
-        //
+        //Create the main character 
         PhotonNetwork.Instantiate("Hero", new Vector3(1.2f,-3.3f,74f), Quaternion.identity);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

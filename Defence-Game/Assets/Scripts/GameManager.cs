@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Reduce the timer, once its 0 then player wins
         timeLeft -= Time.deltaTime;
         timer.text = "TIME : " + (int)timeLeft;
         if(timeLeft < 0)
