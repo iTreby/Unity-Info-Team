@@ -36,6 +36,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void Update()
         {
+            //Looking for the target
             if (target != null)
                 agent.SetDestination(target.position);
 
@@ -50,7 +51,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             this.target = target;
         }
-
+        
+        //When AI touches the portal or sword, he dies
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.tag == "effect" || other.gameObject.tag == "Sword")
