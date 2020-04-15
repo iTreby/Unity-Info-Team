@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
     //    health.SetHealth(currentHP);
     //}
 
+     //This will keep track of the click the player does
     void AttackCombo()
     {
         if (canClick)
@@ -62,6 +63,7 @@ public class PlayerController : MonoBehaviour
         clickCounter = Mathf.Clamp(clickCounter, 0, 3);
     }
 
+    //After one click
     public void AttackOne()
     {
         canClick = false;
@@ -78,6 +80,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Second click
     public void AttackTwo()
     {
         //If click 3 go third, else reset.
@@ -93,6 +96,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //third click to return to idle animation
     public void AttackThree()
     {
         attack.SetBool("FirstAttack", false);
